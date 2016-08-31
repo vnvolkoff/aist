@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<form>
+    <fieldset>
+
+        <field
+                name="fix"
+                type="list"
+                label="COM_AIST_FIX_MONTH_ENTER"
+                description="COM_AIST_FIX_MONTH_ENTER"
+                size="1"
+                default="">
+			<option value="">COM_AIST_FIX_NONE</option>
+			<option value="month">COM_AIST_FIX_MONTH</option>		
+			<option value="quarter">COM_AIST_FIX_QUARTER</option>
+			<option value="year">COM_AIST_FIX_YEAR</option>		
+        </field>
+	
+        <field
+                name="gyear"
+                type="text"
+                label="COM_AISTRESULT_SELECT_YEAR"
+                description="COM_AISTRESULT_SELECT_YEAR"
+                size="4"
+                class="inputbox"/>
+				
+        <field
+                name="gmonth"
+                type="list"
+                label="COM_AISTRESULT_SELECT_MONTH"
+                description="COM_AISTRESULT_SELECT_MONTH"
+                filter="intval"
+                size="1"
+                default="1">
+			<option value="1">COM_AISTRESULT_MONTH_1</option>		
+			<option value="2">COM_AISTRESULT_MONTH_2</option>
+			<option value="3">COM_AISTRESULT_MONTH_3</option>		
+			<option value="4">COM_AISTRESULT_MONTH_4</option>		
+			<option value="5">COM_AISTRESULT_MONTH_5</option>		
+			<option value="6">COM_AISTRESULT_MONTH_6</option>		
+			<option value="7">COM_AISTRESULT_MONTH_7</option>		
+			<option value="8">COM_AISTRESULT_MONTH_8</option>		
+			<option value="9">COM_AISTRESULT_MONTH_9</option>		
+			<option value="10">COM_AISTRESULT_MONTH_10</option>		
+			<option value="11">COM_AISTRESULT_MONTH_11</option>				
+			<option value="12">COM_AISTRESULT_MONTH_12</option>
+        </field>
+
+        <field
+                name="gpercent"
+                type="text"
+                label="COM_AISTRESULT_GPERCENT"
+                description="COM_AISTRESULT_GPERCENT"
+                size="45"
+                class="inputbox"/>
+				
+        <field
+                name="gpercent30"
+                type="text"
+                label="COM_AISTRESULT_GPERCENT30"
+                description="COM_AISTRESULT_GPERCENT30"
+                size="45"
+                class="inputbox"/>
+				
+        <field
+                name="gusd"
+                type="text"
+                label="COM_AISTRESULT_GUSD"
+                description="COM_AISTRESULT_GUSD"
+                size="45"
+                class="inputbox"/>
+	
+        <field name="id"
+               type="text"
+               default="0"
+               label="JGLOBAL_FIELD_ID_LABEL"
+               readonly="true"/>
+        <field name="title"
+               type="text"
+               label="JGLOBAL_TITLE"
+               description="JFIELD_TITLE_DESC"
+               required="false"
+               class="inputbox input-xxlarge input-large-text"
+               size="40"/>
+        <field
+                name="alias"
+                type="text"
+                label="JFIELD_ALIAS_LABEL"
+                description="JFIELD_ALIAS_DESC"
+                size="45"
+                class="inputbox"/>
+        <field
+                name="published"
+                type="list"
+                label="JSTATUS"
+                description="JFIELD_PUBLISHED_DESC"
+                class="chzn-color-state"
+                filter="intval"
+                size="1"
+                default="1">
+            <option value="1">JPUBLISHED</option>
+            <option value="0">JUNPUBLISHED</option>
+        </field>
+        <field
+                name="text"
+                type="editor"
+                label="JGLOBAL_FULL_TEXT"
+                description="JGLOBAL_FULL_TEXT"
+                buttons="true"
+                filter="RAW"/>
+        <field
+                name="metakey"
+                type="textarea"
+                label="JFIELD_META_KEYWORDS_LABEL"
+                description="JFIELD_META_KEYWORDS_DESC"
+                class="inputbox"
+                rows="3"
+                cols="30"/>
+        <field name="metadesc"
+               type="textarea"
+               label="JFIELD_META_DESCRIPTION_LABEL"
+               description="JFIELD_META_DESCRIPTION_DESC"
+               class="inputbox"
+               rows="3"
+               cols="30"/>
+        <field
+                name="created_by"
+                type="user"
+                label="JGLOBAL_FIELD_CREATED_BY_LABEL"
+                description="JGLOBAL_FIELD_CREATED_BY_LABEL"/>
+        <field
+                name="created"
+                type="calendar"
+                label="JGLOBAL_CREATED_DATE"
+                description="JGLOBAL_CREATED_DATE"
+                size="22"
+                class="inputbox" format="%Y-%m-%d %H:%M:%S"
+                filter="user_utc"/>
+
+        <field name="catid"
+               type="category"
+               label="JCATEGORY"
+               description="JFIELD_CATEGORY_DESC"
+               class="inputbox"
+               extension="com_aistresult"/>
+
+        <fields name="params">
+            <fieldset name="basic">
+
+            </fieldset>
+        </fields>
+    </fieldset>
+    <fieldset name="accesscontrol">
+        <field name="asset_id" type="hidden" filter="unset"/>
+        <field
+                name="rules"
+                type="rules"
+                label="JFIELD_RULES_LABEL"
+                translate_label="false"
+                filter="rules"
+                validate="rules"
+                class="inputbox"
+                component="com_aistresult"
+                section="graphs"/>
+    </fieldset>
+</form>

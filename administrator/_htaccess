@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "AIST Invest Administrator"
+AuthUserFile /home/u44669/aistinvest.ru/.htpasswd
+require valid-user 

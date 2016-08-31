@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<config>
+    <fieldset name="global" label="JGLOBAL_FIELDSET_OPTIONS">
+		<field 
+				name="start"
+				type="text"
+				label="COM_AISTRESULT_YEAR_START"
+				required="false"
+				default="2014"
+				size="10"
+				class=""
+				readonly="false"
+				disabled="false"
+				filter="">
+		</field>
+		<!--
+		<field 
+				name="otchet1"
+				type="text"
+				label="COM_AISTRESULT_OTCHET1"
+				required="false"
+				default=""
+				size="10"
+				class=""
+				readonly="false"
+				disabled="false"
+				filter="">
+		</field>
+		
+		<field 
+				name="otchet2"
+				type="text"
+				label="COM_AISTRESULT_OTCHET2"
+				required="false"
+				default=""
+				size="10"
+				class=""
+				readonly="false"
+				disabled="false"
+				filter="">
+		</field>
+		-->
+		<field type="spacer" name="dataA" label="график 1" />
+
+		<field 
+				name="triggerA"
+				type="text"
+				label="trigger"
+				required="false"
+				default="#a66bb3"
+				size="10"
+				class=""
+				readonly="false"
+				disabled="false"
+				filter="">
+		</field>
+		
+		<field
+			name="triggerA"
+			type="color"
+			default="#a66bb3"
+			label="Цвет"
+			description="Цвет" />
+	
+		<field type="spacer" name="dataB" label="график 2" />
+		
+		<field
+			name="triggerB"
+			type="color"
+			default="#a5a1a6"
+			label="Цвет"
+			description="Цвет" />
+
+		
+		<field type="spacer" name="dataC" label="график 3" />
+		
+		<field
+			name="triggerC"
+			type="color"
+			default="#1f1422"
+			label="Цвет"
+			description="Цвет" />
+		
+    </fieldset>
+    <fieldset
+            name="permissions"
+            label="JCONFIG_PERMISSIONS_LABEL"
+            description="JCONFIG_PERMISSIONS_DESC"
+            >
+        <field
+                name="rules"
+                type="rules"
+                label="JCONFIG_PERMISSIONS_LABEL"
+                class="inputbox"
+                validate="rules"
+                filter="rules"
+                component="com_aistresult"
+                section="component"/>
+    </fieldset>
+</config>

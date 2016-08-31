@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="2.5"
+	client="site">
+	<name>mod_aistchart_graph</name>
+	<author>Arhet</author>
+	<creationDate>July 2004</creationDate>
+	<copyright>Copyright (C) 2005 - 2012 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>admin@joomla.org</authorEmail>
+	<authorUrl>www.joomla.org</authorUrl>
+	<version>1.0</version>
+	<description>Модуль вывода графика</description>
+	<files>
+		<filename module="mod_aistchart_graph">mod_aistchart_graph.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+	</files>
+	<languages>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+			
+				<field
+						name="method"
+						type="list"
+						label="Способ показа"
+						description="Способ показа"
+						size="1"
+						default="">
+					<option value="">Показать и граф и таблицу</option>
+					<option value="graph">Показать только граф</option>		
+					<option value="table">Показать только таблицу</option>	
+				</field>			
+			
+			</fieldset>
+		
+			<fieldset name="advanced">
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>

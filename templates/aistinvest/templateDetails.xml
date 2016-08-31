@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <extension version="1.6" type="template">
+         <name>AistInvest</name>
+         <creationDate>2016-03-08</creationDate>
+         <author>Alexey</author>
+         <authorEmail>a.kiselev@seoteam.pro</authorEmail>
+         <authorUrl>http://www.seoteam.pro/</authorUrl>
+         <copyright>SEOTEAM.PRO</copyright>
+         <license>GNU/GPL 2 or Later</license>
+         <version>1.0.0</version>
+         <description>TMP_AISTINVEST_DESC</description>
+         <files>
+                 <filename>index.php</filename>
+                 <filename>index.html</filename>
+                 <filename>templateDetails.xml</filename>
+                 <folder>css</folder>
+                 <folder>fonts</folder>
+                 <folder>html</folder>
+                 <folder>images</folder>
+                 <folder>js</folder>
+                 <folder>language</folder>
+         </files>
+        <positions>
+                <position>menu</position>
+				<position>graph</position>
+				<position>script</position>
+        </positions>
+        <languages folder="language">
+                <language tag="ru-RU">ru-RU/ru-RU.tpl_AistInvest.ini</language>
+                <language tag="ru-RU">ru-RU/ru-RU.tpl_AistInvest.sys.ini</language>
+                <language tag="en-GB">en-GB/en-GB.tpl_AistInvest.ini</language>
+                <language tag="en-GB">en-GB/en-GB.tpl_AistInvest.sys.ini</language>
+        </languages>
+        <config>
+                <fields name="params">
+                        <fieldset name="ekran1">
+                            <field name="note01" type="note" class="alert alert-info" label="Экран 1" description="Слоган компании / кто мы" />
+                            <field name="ek1_slogan_1" class="" type="textarea" rows="5" default="Мы торгуем на фондовом рынке России и США, используя торговых роботов" label="Слоган / Заголовок" description="Выводиться крупными буквами" />
+                            <field name="ek1_slogan_2" class="" type="textarea" rows="5" default="Мы управляем своими деньгами и даем рекомендации другим инвесторам за долю от прибыли." label="Тезис" description="Выводиться мелкими буквами" />
+                        </fieldset>
+
+                    <fieldset name="ekran2">
+                        <field name="note02" type="note" class="alert alert-info" label="Экран 2" description="Результаты. Результаты вводятся вручную в HTML код таблицы." />
+                        <field name="ek2_table" class="" type="textarea" rows="15" cols="15" filter="raw" default="" label="HTML Таблица" description="" />
+                    </fieldset>
+
+                    <fieldset name="ekran3">
+                        <field name="note03" type="note" class="alert alert-info" label="Экран 3" description="Преимущества" />
+
+                        <field name="ek_3_label" class="" type="text" default="Мы работаем со счетами от 5 миллионов рублей" label="Заголовок" description="" />
+                        <field name="ek_3_desc" class="" type="textarea" rows="5" filter="raw" default="" label="Тезис" description="" />
+
+                        <field type="spacer" name="ek3_spacer_01" hr="true" />
+                        <field type="spacer" name="ek3_spacer_02" label="Преимущества, блок слева" />
+
+                        <field name="ek_3_advantages_1_label" class="" type="text" default="Ваши деньги у вас" label="Заголовок" description="" />
+                        <field name="ek_3_advantages_1_desc" class="" type="text" default="брокерский счет открыт у независимого брокера и принадлежит вам" label="Тезис" description="" />
+
+                        <field type="spacer" name="ek3_spacer_03" label="Преимущества, блок справа" />
+                        <field name="ek_3_advantages_2_label" class="" type="text" default="Контроль рисков" label="Заголовок" description="" />
+                        <field name="ek_3_advantages_2_desc" class="" type="text" default="мы сразу договариваемся о максимально возможных убытках" label="Тезис" description="" />
+                    </fieldset>
+
+                    <fieldset name="ekran4">
+                        <field name="note04" type="note" class="alert alert-info" label="Экран 4" description="О НАС" />
+                        <field name="ek_4_label" class="" type="text" default="Что нужно, чтобы начать работать с нами" label="Заголовок" description="" />
+                        <field name="ek_4_text" type="editor" buttons="true" hide="pagebreak,readmore" class="inputbox" filter="JComponentHelper::filterText" label="О нас (текст)" description="" />
+
+                        <field type="spacer" name="ek_4_spacer_01" hr="true" />
+                        <field type="spacer" name="ek_4_spacer_02" label="ОТВЕТЫ НА ЧАСТЫЕ ВОПРОСЫ" />
+
+                        <field name="ek_4_btn_on" type="radio" class="btn-group" label="Показать ссылку?" description="" labelclass="control-label">
+                            <option value="0">JHIDE</option>
+                            <option value="1">JSHOW</option>
+                        </field>
+                        <field name="ek_4_btn_label" class="" type="text" default="ОТВЕТЫ НА ЧАСТЫЕ ВОПРОСЫ" label="Заголовок ссылки" description="" />
+                        <field name="ek_4_btn_url" type="menuitem" label="URL" description="ССылка на материал в Joomla" class="inputbox" required="true" size="1" />
+
+                    </fieldset>
+
+                    <fieldset name="ekran5">
+                        <field name="note05" type="note" class="alert alert-info" label="Экран 5" description="КОНТАКТЫ" />
+                        <field name="ek_5_label" class="" type="text" default="Контакты" label="Заголовок" description="" />
+                        <field name="ek_5_text" class="" type="textarea" rows="5" filter="raw" default="" label="Текст" description="" />
+
+                        <field type="spacer" name="ek_5_spacer_01" hr="true" />
+                        <field name="ek_5_address" class="" type="text" default="г. Москва, ул. Плеханова, 4А" label="Адрес" description="" />
+                        <field name="ek_5_phone" class="" type="text" default="+7 (495) 733-98-75" label="Телефон" description="" />
+                    </fieldset>
+
+                </fields>
+        </config>
+ </extension>

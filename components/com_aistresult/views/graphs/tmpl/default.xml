@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<metadata>
+    <layout title="COM_AISTRESULT_GRAPHS"/>
+    <fields name="request">
+        <fieldset
+                name="request"
+                addfieldpath="/administrator/components/com_aistresult/models/fields">
+				
+			<field
+					name="method"
+					type="list"
+					label="COM_AIST_SHOW_METHOD"
+					description="COM_AIST_SHOW_METHOD"
+					size="1"
+					default="">
+				<option value="">COM_AIST_SHOW_BOTH</option>
+				<option value="graph">COM_AIST_SHOW_GRAPH</option>		
+				<option value="table">COM_AIST_SHOW_TABLE</option>	
+			</field>
+
+        </fieldset>
+    </fields>
+</metadata>
