@@ -43,6 +43,7 @@ foreach ( $items as $item ){
 	$data[$item->gyear][$item->gmonth]['percent'] = $item->gpercent;
 	$data[$item->gyear][$item->gmonth]['percent30'] = $item->gpercent30;
 	$data[$item->gyear][$item->gmonth]['usd'] = $item->gusd;
+	$data[$item->gyear][$item->gmonth]['mmvb'] = $item->mmvb;
 }
 
 $componentParams = &JComponentHelper::getParams('com_aistresult');

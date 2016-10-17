@@ -57,6 +57,10 @@ $input = JFactory::getApplication()->input;
 					<div class="control-label"><?php echo $this->form->getLabel( 'gusd' ); ?></div>
 					<div class="controls"><?php echo $this->form->getInput( 'gusd' ); ?></div>
 				</div>							
+				<div class="control-group">
+					<div class="control-label"><?php echo $this->form->getLabel( 'mmvb' ); ?></div>
+					<div class="controls"><?php echo $this->form->getInput( 'mmvb' ); ?></div>
+				</div>							
 				
 			</div>
 			<div class="span3">

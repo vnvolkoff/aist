@@ -28,7 +28,11 @@ $this->_scripts = $this->_scripts = array();
 $params = $app->getTemplate(true)->params;
 
 // Add Stylesheets
+
 $doc->addStyleSheet('templates/' . $this->template . '/css/style.css');
+$doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/amcharts/amcharts.js');
+$doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/amcharts/serial.js');
+$doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/amcharts/amstock.js');
 
 // Load optional RTL Bootstrap CSS
 JHtml::_('bootstrap.loadCss', false, $this->direction);
@@ -72,7 +76,7 @@ JHtml::_('bootstrap.loadCss', false, $this->direction);
     <meta property="og:image" content="https://www.aistinvest.ru/aistinvestlogosocial.png"/>
 
     <jdoc:include type="head" />
-    
+
 </head>
 <body>
 <!--BEGIN PAGE HOLDER-->
@@ -156,7 +160,9 @@ JHtml::_('bootstrap.loadCss', false, $this->direction);
                     </div>
                 </div>
                 end of result-->
+
 				<jdoc:include type="modules" name="graph" />
+
             </div>
 
 
@@ -336,14 +342,15 @@ JHtml::_('bootstrap.loadCss', false, $this->direction);
 <!--JS-->
 <script src="<?php echo $tplPath; ?>js/jquery-1.12.0.js"></script>
 <script src="<?php echo $tplPath; ?>js/jquery.validate.js"></script>
+
 <?php if ($isFrontPage) {?><script src="<?php echo $tplPath; ?>js/main-page.js"></script><?php }?>
-<script src="<?php echo $tplPath; ?>js/highcharts/highcharts.js"></script>
+<!--<script src="<?php echo $tplPath; ?>js/highcharts/highcharts.js"></script>-->
 <script src="<?php echo $tplPath; ?>js/scripts.js"></script>
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
 
 <jdoc:include type="modules" name="script" />
 
-<!-- Yandex.Metrika counter -->
+<!-- Yandex.Metrika counter 
 <script type="text/javascript">
 (function (d, w, c) {
     (w[c] = w[c] || []).push(function() {
@@ -370,7 +377,7 @@ JHtml::_('bootstrap.loadCss', false, $this->direction);
 })(document, window, "yandex_metrika_callbacks");
 </script>
 <noscript><div><img src="//mc.yandex.ru/watch/30261502" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+-- /Yandex.Metrika counter -->
 
 </body>
 </html>

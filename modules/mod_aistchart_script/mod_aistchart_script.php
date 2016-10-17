@@ -44,6 +44,7 @@ foreach ( $items as $item ){
 	$percent[] = $item->gpercent;
 	$percent30[] = $item->gpercent30;
 	$usd[] = $item->gusd;
+	$mmvb[] = $item->mmvb;
 	
 	$data[] = '"'.AistresultHelper::getMonth($item->gmonth).' '.$item->gyear.'"';
 	/*
@@ -58,6 +59,7 @@ $data = implode(', ',$data);
 $percent = implode(', ',$percent);
 $percent30 = implode(', ',$percent30);
 $usd = implode(', ',$usd);
+$usd = implode(', ',$mmvb);
 
 $componentParams = &JComponentHelper::getParams('com_aistresult');
 $start = $componentParams->get('start', '2014'); 
@@ -87,6 +89,7 @@ $pointHighlightStrokeC = $componentParams->get('pointHighlightStrokeC');
 $triggerA = $componentParams->get('triggerA');
 $triggerB = $componentParams->get('triggerB'); 
 $triggerC = $componentParams->get('triggerC'); 
+$triggerD = $componentParams->get('triggerD'); 
 
 require JModuleHelper::getLayoutPath('mod_aistchart_script', $params->get('layout', 'default'));
 

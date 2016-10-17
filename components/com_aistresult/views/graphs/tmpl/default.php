@@ -97,6 +97,7 @@ $method = JRequest::getVar('method');
 						$total_percent = 0;
 						$total_percent30 = 0;
 						$total_usd = 0;
+						$total_mmvb = 0;
 						
 						$x = 0;
 					
@@ -106,17 +107,20 @@ $method = JRequest::getVar('method');
 						<div class="data-table-a percent" style="color:<?php echo $triggerA; ?>;"><?php if($data[$start][$x]['percent']) echo $data[$start][$x]['percent'].'%'; else echo '-'; ?></div>
 						<div class="data-table-b percent30" style="color:<?php echo $triggerB; ?>;"><?php if($data[$start][$x]['percent30']) echo $data[$start][$x]['percent30'].'%'; else echo '-'; ?></div>
 						<div class="data-table-c usd" style="color:<?php echo $triggerC; ?>;"><?php if($data[$start][$x]['usd']) echo $data[$start][$x]['usd'].'%'; else echo '-'; ?></div>
+						<div class="data-table-d mmvb" style="color:<?php echo $triggerD; ?>;"><?php if($data[$start][$x]['mmvb']) echo $data[$start][$x]['mmvb'].'%'; else echo '-'; ?></div>
 					</td>
 					<?php 
 						$total_percent = $total_percent + $data[$start][$x]['percent'];
 						$total_percent30 = $total_percent30 + $data[$start][$x]['percent30'];
 						$total_usd = $total_usd + $data[$start][$x]['usd'];
+						$total_mmvb = $total_mmvb + $data[$start][$x]['usd'];
 					?>
 					<?php endfor; ?>
 					<td>
 						<div class="data-table-a percent" style="color:<?php echo $triggerA; ?>;"><?php echo $total_percent; ?>%</div>
 						<div class="data-table-b percent30" style="color:<?php echo $triggerB; ?>;"><?php echo $total_percent30; ?>%</div>
 						<div class="data-table-c usd" style="color:<?php echo $triggerC; ?>;"><?php echo $total_usd; ?>%</div>
+						<div class="data-table-d mmvb" style="color:<?php echo $triggerD; ?>;"><?php echo $total_mmvb; ?>%</div>
 					</td>
                 </tr>
 				<?php endfor; ?>

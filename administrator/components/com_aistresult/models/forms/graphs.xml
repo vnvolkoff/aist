@@ -68,6 +68,13 @@
                 description="COM_AISTRESULT_GUSD"
                 size="45"
                 class="inputbox"/>
+        <field
+                name="mmvb"
+                type="text"
+                label="COM_AISTRESULT_MMVB"
+                description="COM_AISTRESULT_MMVB"
+                size="45"
+                class="inputbox"/>
 	
         <field name="id"
                type="text"

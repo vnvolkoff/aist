@@ -1036,7 +1036,7 @@ footer {
 
 
 
-.result-table .percent30,.result-table .usd{
+.result-table .percent30,.result-table .usd, .result-table .dontshow{
     display:none;
 }
 
