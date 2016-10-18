@@ -918,6 +918,7 @@ footer {
 
 .result-triggers .selected{
 	font-weight: normal;
+	text-decoration: underline;
 }
 
 .result-type .selected{

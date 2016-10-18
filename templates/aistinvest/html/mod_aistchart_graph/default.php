@@ -18,6 +18,16 @@ function changetable (dataind) {
           divs.item(i).className = "data-table-a dontshow";
        }
    }
+
+    var myidon;
+    var myidoff;
+
+    if (dataind === '2') {myidon = 'bpercent'; myidoff = 'ddoll';}
+    else if (dataind === '3') {myidoff = 'bpercent'; myidon = 'ddoll';}
+    document.getElementById( myidon ).className  = "chart-link chart-b selected";
+    document.getElementById( myidoff ).className  = "chart-link chart-b";
+
+
 }
 
 
@@ -30,7 +40,7 @@ function changetable (dataind) {
 			$total_usd = 0;
 			for($x = 1;$x<13;$x++): 
                           if($data[$i][$x]['percent']) {$mypercent=$data[$i][$x]['percent']; $mypercent30=$data[$i][$x]['percent30'];
-                            echo '{ "newDate": "'.$i.'-'.$x.'",  "results": '.$mypercent.', "pureresults": '.$mypercent30.' },';
+                            echo '{ "newDate": "'.$i.'-'.$x.'",  "results": '.$mypercent.', "pureresults": \''.$mypercent30.'\' },';
                           } else break 2;
                         endfor;
                     endfor;
@@ -83,7 +93,10 @@ function changetable (dataind) {
                var graph1 = new AmCharts.AmGraph();
                graph1.valueAxis = valueAxis1; // we have to indicate which value axis should be used
                graph1.title = "Накопительная доходность";
-               graph1.valueField = "results";
+               graph1.valueField = "pureresults";
+//               graph1.balloonText = "[[pureresults]] %";
+               graph1.balloonText = "[[pureresults]] %";
+
                graph1.bullet = "round";
                graph1.bulletBorderThickness = 1;
                graph1.autoGridCount = true;
@@ -168,9 +181,9 @@ function changetable (dataind) {
 			<?php endif; ?>-->
 			
 			<ul class="result-triggers">
-				<!--<li class="chart-link chart-a selected" data-chart="b" style="color:<?php echo $triggerA; ?>;" onclick="changetable ('1')"<span style="border-bottom:1px dashed <?php echo $triggerA; ?>;">Накопительный доход</span></li>-->
-				<li class="chart-link chart-b selected" data-chart="a" style="color:<?php echo $triggerB; ?>;" onclick="changetable ('2')"<span style="border-bottom:1px dashed <?php echo $triggerA; ?>;">Основной процент</span>	</li>
-				<li class="chart-link chart-c" data-chart="c" style="color:<?php echo $triggerC; ?>;" onclick="changetable ('3')"<span style="border-bottom:1px dashed <?php echo $triggerC; ?>;">Доход в долларах</span>	</li>
+				<!--<li class="chart-link chart-a selected" data-chart="b" style="color:<?php echo $triggerA; ?>;" onclick="changetable ('1')"<span style="border-bottom:1px  <?php echo $triggerA; ?>;">Накопительный доход</span></li>-->
+				<li id="bpercent" class="chart-link chart-b selected" data-chart="a" style="color:<?php echo $triggerB; ?>;" onclick="changetable ('2')"<span id="bpercent" style="border-bottom:1px  <?php echo $triggerA; ?>;">Основной процент</span>	</li>
+				<li id="ddoll" class="chart-link chart-c" data-chart="c" style="color:<?php echo $triggerC; ?>;" onclick="changetable ('3')"<span id="dpercent" style="border-bottom:1px dashed <?php echo $triggerC; ?>;">Доход в долларах</span>	</li>
 				<li style="padding-left: 150px;"><a style="text-decoration: underline;" href="https://docs.google.com/spreadsheets/d/1YFvm757p2WfcouIVScmclVDHg7PJIFMrQN_3UAtldDU/edit#gid=0" target="_blank">Подробная таблица</a></li>
 			</ul>
 		
@@ -212,8 +225,8 @@ function changetable (dataind) {
 					?>
 					<?php for($x = 1;$x<13;$x++): ?>
                     <td>
-						<div class="data-table-a dontshow" id="1"  style="color:<?php echo $triggerA; ?>;"><?php if($data[$start][$x]['percent']) echo $data[$start][$x]['percent'].'%'; else echo '-'; ?></div>
-						<div class="data-table-a percent" id="2"  style="color:<?php echo $triggerB; ?>;"><?php if($data[$start][$x]['percent30']) echo $data[$start][$x]['percent30'].'%'; else echo '-'; ?></div>
+						<div class="data-table-a dontshow" id="1"  style="color:<?php echo $triggerA; ?>;"><?php if($data[$start][$x]['percent30']) echo $data[$start][$x]['percent30'].'%'; else echo '-'; ?></div>
+						<div class="data-table-a percent" id="2"  style="color:<?php echo $triggerB; ?>;"><?php if($data[$start][$x]['percent']) echo $data[$start][$x]['percent'].'%'; else echo '-'; ?></div>
 						<div class="data-table-a dontshow" id="3"  style="color:<?php echo $triggerC; ?>;"><?php if($data[$start][$x]['usd']) echo $data[$start][$x]['usd'].'%'; else echo '-'; ?></div>
 					</td>
 					<?php 
@@ -223,8 +236,8 @@ function changetable (dataind) {
 					?>
 					<?php endfor; ?>
 					<td>
-						<div class="data-table-a dontshow" id="1"  style="color:<?php echo $triggerA; ?>;"><?php echo $total_percent; ?>%</div>
-						<div class="data-table-a percent" id="2"  style="color:<?php echo $triggerB; ?>;"><?php echo $total_percent30; ?>%</div>
+						<div class="data-table-a dontshow" id="1"  style="color:<?php echo $triggerA; ?>;"><?php echo $total_percent30; ?>%</div>
+						<div class="data-table-a percent" id="2"  style="color:<?php echo $triggerB; ?>;"><?php echo $total_percent; ?>%</div>
 						<div class="data-table-a dontshow" id="3"  style="color:<?php echo $triggerC; ?>;"><?php echo $total_usd; ?>%</div>
 					</td>
                 </tr>
